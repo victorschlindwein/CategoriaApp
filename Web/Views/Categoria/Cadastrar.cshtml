@@ -1,0 +1,23 @@
+@model Web.ViewModels.CategoriaViewModel
+
+@{
+    ViewData["Title"] = "Cadastrar Categoria";
+}
+
+<h2>Cadastrar Categoria</h2>
+
+<form asp-action="Cadastrar" method="post">
+    <div>
+        <label asp-for="Nome"></label>
+        <input asp-for="Nome" class="form-control" />
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+
+@if (ViewBag.Mensagem != null)
+{
+    <br />
+    <p class="text-success">@ViewBag.Mensagem</p>
+}
